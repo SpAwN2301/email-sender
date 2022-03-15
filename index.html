@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        #sendBtn {
+            transition: all 0.2s;
+            cursor: pointer;
+
+            padding: 5px 10px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 10px;
+
+            width: max-content;
+            height: min-content;
+
+            border-radius: 14px;
+            border: none;
+            background: #e03638;
+
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18.9492px;
+            color: #ffffff;
+        }
+
+        #sendBtn:hover {
+            background: #32cd32;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="sendBtn">send message</button>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        const sendBtn = document.getElementById("sendBtn");
+        const mailStr = `masyorova@polylog.ru
+maserova@eoforum.ru
+annmasyorova@mail.ru`;
+        const codeStr = `X619-4E6SWX58
+X61E-4E6SWX5A
+X61F-4E6SWX5Y`;
+
+        const mailArr = mailStr.replaceAll(' ', '').split('\n');
+        const codeArr = codeStr.replaceAll(' ', '').split('\n');
+
+        sendBtn.addEventListener("click", () => {
+            for (let i = 0; i < mailArr.length; i++) {
+                console.log(mailArr[i], codeArr[i]);
+                let template = `
+                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="600"
+                        style="color:rgb(68,68,68);font-family:Roboto,RobotoDraft,Helvetica,Arial,sans-serif;font-size:14px;border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                        <tbody>
+                            <tr style="border-color:transparent">
+                                <td border="0" style="border-collapse:collapse;border-color:transparent">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;width:600px;margin-bottom:0px">
+                                        <tbody>
+                                            <tr style="border-color:transparent">
+                                                <th align="left" valign="top" width="600"
+                                                    style="border-color:transparent;font-weight:400;text-align:left;vertical-align:top">
+                                                    <table bgcolor="#ededed" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="background-color:rgb(237,237,237);border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table bgcolor="#ededed" cellpadding="0" cellspacing="0"
+                                                                        width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="570"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:15px 15px 20px;vertical-align:top;word-break:break-word">
+                                                                                    <div align="center"
+                                                                                        style="box-sizing:border-box;line-height:1.5;text-align:center;width:570px">
+                                                                                        <div></div>
+                                                                                    </div>
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;clear:both;line-height:1.5">
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<img
+                                                                        src="https://mail.google.com/mail/u/0?ui=2&amp;ik=17eff1e062&amp;attid=0.1&amp;permmsgid=msg-f:1727361685996185671&amp;th=17f8d24d2c6c2847&amp;view=fimg&amp;fur=ip&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_w_TrM_ablMc6aY_trJXVr0-TjLG6HzG8d1TLbRkYvOXA4hX5sqTINnj7G_7lRIngK2ZsEGybc4_Hdy-tD7FNJ0gwKpzjdy6v6VEP6vv-PJGTYd46weT4XX-0&amp;disp=emb&amp;realattid=ii_l0rw72g53"
+                                                                        alt="Без_названия-removebg-preview (2).png" width="497"
+                                                                        height="168" data-image-whitelisted="" class="CToWUd a6T"
+                                                                        tabindex="0">
+                                                                    <div class="a6S" dir="ltr"
+                                                                        style="opacity: 0.01; left: 403.672px; top: 514px;">
+                                                                        <div id=":qi" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
+                                                                            role="button" tabindex="0"
+                                                                            aria-label="Скачать файл Без_названия-removebg-preview (2).png"
+                                                                            data-tooltip-class="a1V" data-tooltip="Скачать">
+                                                                            <div class="akn">
+                                                                                <div class="aSK J-J5-Ji aYr"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id=":qj" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
+                                                                            role="button" tabindex="0"
+                                                                            aria-label="Добавить файл &quot;Без_названия-removebg-preview (2).png&quot; на Диск"
+                                                                            jslog="119524; u014N:cOuCgd,xr6bB; 43:WyJpbWFnZS9wbmciLDEzNDI5NF0."
+                                                                            data-tooltip-class="a1V" data-tooltip="Добавить на Диск">
+                                                                            <div class="akn">
+                                                                                <div class="wtScjd J-J5-Ji aYr XG">
+                                                                                    <div class="T-aT4" style="display: none;">
+                                                                                        <div></div>
+                                                                                        <div class="T-aT4-JX"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id=":ql" class="T-I J-J5-Ji aQv T-I-ax7 L3 a5q"
+                                                                            role="button" tabindex="0"
+                                                                            aria-label="Сохранить в Google Фото"
+                                                                            jslog="54186; u014N:cOuCgd,xr6bB; 43:WyJpbWFnZS9wbmciLDEzNDI5NF0."
+                                                                            data-tooltip-class="a1V"
+                                                                            data-tooltip="Сохранить в Google Фото">
+                                                                            <div class="akn">
+                                                                                <div class="J-J5-Ji aYr akS">
+                                                                                    <div class="T-aT4" style="display: none;">
+                                                                                        <div></div>
+                                                                                        <div class="T-aT4-JX"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div><br><br>
+                                                                    <div style="text-align:left"></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="600"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:0px;vertical-align:top;word-break:break-word">
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;line-height:1.5;width:600px;height:6px;background-color:#01a6de;"></div>
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;clear:both;line-height:1.5">
+                                                                                        &nbsp;</div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;width:600px;margin-bottom:0px">
+                                        <tbody>
+                                            <tr style="border-color:transparent">
+                                                <th align="left" valign="top" width="600"
+                                                    style="border-color:transparent;font-weight:400;text-align:left;vertical-align:top">
+                                                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="500"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:25px 50px 10px;vertical-align:top;word-break:break-word">
+                                                                                    <p align="center"
+                                                                                        style="box-sizing:border-box;color:inherit;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif;font-size:inherit;line-height:inherit;margin:0px 0px 10px;padding:0px">
+                                                                                        <strong style="box-sizing:border-box">Уважаемые
+                                                                                            коллеги!&nbsp;</strong></p>
+                                                                                    <p align="center"
+                                                                                        style="box-sizing:border-box;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif;font-size:inherit;line-height:inherit;margin:0px 0px 10px;padding:0px;text-align:center">
+                                                                                        <span
+                                                                                            style="color:rgb(51,51,51);box-sizing:border-box">Благодарим
+                                                                                            вас за участие в работе </span>
+                                                                                        <font color="#ff0000"><span
+                                                                                                style="box-sizing:border-box">X
+                                                                                                Всероссийской на</span><span
+                                                                                                style="box-sizing:border-box">учно-практической
+                                                                                                конференции «Неотложная детская хирургия
+                                                                                                и травматология»&nbsp;</span><span
+                                                                                                style="font-size:inherit"><span
+                                                                                                    style="box-sizing:border-box">16-19
+                                                                                                    февраля 2022 года</span></span>
+                                                                                        </font><span
+                                                                                            style="color:rgb(51,51,51);font-size:inherit;box-sizing:border-box">.</span>
+                                                                                    </p>
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;clear:both;line-height:1.5">
+                                                                                        &nbsp;</div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;width:600px;margin-bottom:0px">
+                                        <tbody>
+                                            <tr style="border-color:transparent">
+                                                <th align="left" valign="top" width="600"
+                                                    style="border-color:transparent;font-weight:400;text-align:left;vertical-align:top">
+                                                    <table bgcolor="#cacce6" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="background-color:rgb(202,204,230);border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table bgcolor="#cacce6" cellpadding="0" cellspacing="0"
+                                                                        width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="500"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:15px 50px;vertical-align:top;word-break:break-word">
+                                                                                    <p align="center"
+                                                                                        style="box-sizing:border-box;color:inherit;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif;font-size:inherit;line-height:inherit;margin:0px 0px 10px;padding:0px;text-align:center">
+                                                                                        <span
+                                                                                            style="color:inherit;font-size:inherit">Индивидуальный
+                                                                                            код подтверждения</span><br></p>
+                                                                                    <p align="center"
+                                                                                        style="box-sizing:border-box;color:inherit;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif;font-size:inherit;line-height:inherit;margin:0px 0px 10px;padding:0px;text-align:center">
+                                                                                        <span style="color:rgb(255,0,0)"><strong
+                                                                                                style="box-sizing:border-box">${codeArr[i]}</strong></span>
+                                                                                    </p>
+                                                                                    <p align="center"
+                                                                                        style="box-sizing:border-box;color:inherit;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif;font-size:inherit;line-height:inherit;margin:0px 0px 10px;padding:0px;text-align:center">
+                                                                                        6 зачетных единиц (кредитов)</p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="500"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:15px 50px;vertical-align:top;word-break:break-word">
+                                                                                    <p align="justify"
+                                                                                        style="box-sizing:border-box;color:inherit;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif;font-size:inherit;line-height:inherit;margin:0px 0px 10px;padding:0px;text-align:justify">
+                                                                                        <span style="box-sizing:border-box">Активировать
+                                                                                            коды НМО вы можете в личном кабинете
+                                                                                            на&nbsp;портале непрерывного медицинского и
+                                                                                            фармацевтического образования Минздрава
+                                                                                            России&nbsp;<a
+                                                                                                href="https://s6940669.sendpul.se/sl/MjU1NzAyNzA2/c375151ed2ef91aa0f4573671c5e5a1006168s1"
+                                                                                                rel="noopener noreferrer"
+                                                                                                style="color:rgb(0,137,191);box-sizing:border-box;text-decoration-line:none"
+                                                                                                target="_blank"
+                                                                                                data-saferedirecturl="https://www.google.com/url?q=https://s6940669.sendpul.se/sl/MjU1NzAyNzA2/c375151ed2ef91aa0f4573671c5e5a1006168s1&amp;source=gmail&amp;ust=1647426880626000&amp;usg=AOvVaw1cFcNpvB4cKVkCpRXuua98">edu.rosminzdrav.ru&nbsp;</a></span>
+                                                                                    </p>
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;clear:both;line-height:1.5">
+                                                                                        &nbsp;</div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;width:600px;margin-bottom:0px">
+                                        <tbody>
+                                            <tr style="border-color:transparent">
+                                                <th align="left" valign="top" width="600"
+                                                    style="border-color:transparent;font-weight:400;text-align:left;vertical-align:top">
+                                                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table align="center" cellpadding="0" cellspacing="0" width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;text-align:center;margin-bottom:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="570"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:5px 15px 15px;vertical-align:top;word-break:break-word">
+                                                                                    <table border="0" cellpadding="5" cellspacing="0"
+                                                                                        style="border:0px transparent;border-collapse:collapse;border-spacing:0px;line-height:1;margin-bottom:0px">
+                                                                                        <tbody>
+                                                                                            <tr
+                                                                                                style="border-color:transparent;box-sizing:border-box">
+                                                                                                <th align="left"
+                                                                                                    style="border:0px transparent;box-sizing:border-box;font-family:arial,sans-serif;font-size:13px;font-weight:400;line-height:32px;padding:2px 5px;text-align:left">
+                                                                                                    <a href="https://s6940669.sendpul.se/sl/MjU1NzAyNzA3/c375151ed2ef91aa0f4573671c5e5a1006168s1"
+                                                                                                        rel="noopener noreferrer"
+                                                                                                        style="color:rgb(0,137,191);box-sizing:border-box;text-decoration-line:none"
+                                                                                                        target="_blank"
+                                                                                                        data-saferedirecturl="https://www.google.com/url?q=https://s6940669.sendpul.se/sl/MjU1NzAyNzA3/c375151ed2ef91aa0f4573671c5e5a1006168s1&amp;source=gmail&amp;ust=1647426880626000&amp;usg=AOvVaw1byJGJJzphSHPv9gcukWS-"><img
+                                                                                                            alt="Facebook" border="0"
+                                                                                                            src="https://ci3.googleusercontent.com/proxy/LCBPgQXT_GXrP_vdpfE6maTz_KF7MB8gJaFb72runbdKdHuBMGt9mcrZb-O02QieyCSwRdMPS_6bWP2SmUG2ixFwaAG_m8EZJL7tcxJ3hNVpDg2smvEueg=s0-d-e1-ft#https://s6940669.sendpul.se/img/constructor/social/round/facebook.png"
+                                                                                                            title="Facebook" width="32"
+                                                                                                            style="border:0px transparent;box-sizing:border-box;height:auto;line-height:13px;margin:5px"
+                                                                                                            class="CToWUd"></a></th>
+                                                                                                <th align="left"
+                                                                                                    style="border:0px transparent;box-sizing:border-box;font-family:arial,sans-serif;font-size:13px;font-weight:400;line-height:32px;padding:2px 5px;text-align:left">
+                                                                                                    <a href="https://s6940669.sendpul.se/sl/MjU1NzAyNzA4/c375151ed2ef91aa0f4573671c5e5a1006168s1"
+                                                                                                        rel="noopener noreferrer"
+                                                                                                        style="color:rgb(0,137,191);box-sizing:border-box;text-decoration-line:none"
+                                                                                                        target="_blank"
+                                                                                                        data-saferedirecturl="https://www.google.com/url?q=https://s6940669.sendpul.se/sl/MjU1NzAyNzA4/c375151ed2ef91aa0f4573671c5e5a1006168s1&amp;source=gmail&amp;ust=1647426880626000&amp;usg=AOvVaw1Kg2FbDW_6oD74YwcFPNuL"><img
+                                                                                                            alt="Instagram" border="0"
+                                                                                                            src="https://ci4.googleusercontent.com/proxy/FwYe0OcZbjKQPInsQN-eWxsoFvLp36fU4EXZMOq8SbBHdhS056jLpFGpy5j86D-ir3Ug-CmVFKPWm_l2-3cB7OYl-oAfEW0au6De_Jj4QYaETPPZ85q0PpI=s0-d-e1-ft#https://s6940669.sendpul.se/img/constructor/social/round/instagram.png"
+                                                                                                            title="Instagram" width="32"
+                                                                                                            style="border:0px transparent;box-sizing:border-box;height:auto;line-height:13px;margin:5px"
+                                                                                                            class="CToWUd"></a></th>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;clear:both;line-height:1.5">
+                                                                                        &nbsp;</div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%"
+                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                        <tbody>
+                                                            <tr style="border-color:transparent">
+                                                                <td style="border-collapse:collapse;border-color:transparent">
+                                                                    <table cellpadding="0" cellspacing="0" width="100%"
+                                                                        style="border-collapse:collapse;border-color:transparent;line-height:1.5;margin-bottom:0px">
+                                                                        <tbody>
+                                                                            <tr
+                                                                                style="border-color:transparent;font-family:arial,&quot;helvetica neue&quot;,helvetica,sans-serif">
+                                                                                <td valign="top" width="600"
+                                                                                    style="border-collapse:collapse;border-color:transparent;padding:0px;vertical-align:top;word-break:break-word">
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;line-height:1.5;width:600px;height:6px;background-color:#01a6de;"></div>
+                                                                                    <div
+                                                                                        style="box-sizing:border-box;clear:both;line-height:1.5">
+                                                                                        &nbsp;</div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            
+                Email.send({
+                    SecureToken: "b62a929b-9d2d-4dca-ab90-eea2554efa96",
+                    To: mailArr[i],
+                    From: "vadimpronkin19@gmail.com",
+                    Subject: "This is the subject",
+                    Body: template,
+                }).then((message) => console.log(message));
+            }
+            
+
+            
+            // "5ACACB032813E711E4B3499008295F0AD61D"
+        });
+    </script>
+</body>
+
+</html>
